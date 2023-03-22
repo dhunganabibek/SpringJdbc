@@ -18,10 +18,11 @@ public class Main {
 		JdbcTemplate jdbcTemplate = (JdbcTemplate) applicationContext.getBean("jdbcTemplate");
 
 		// insert operation - way3
-		String insertQuery = "insert into employee(employeeId,employeeName,salary,emailId,password) values(?,?,?,?,?)";
-		jdbcTemplate.update(insertQuery, new Object[] { 1, "Bibek", 8500,
-				"bidhunga@ttu.edu", "TestinG123@" });
-		System.out.println("Records inserted successfully");
+		// String insertQuery = "insert into
+		// employee(employeeId,employeeName,salary,emailId,password) values(?,?,?,?,?)";
+		// jdbcTemplate.update(insertQuery, new Object[] { 1, "Bibek", 8500,
+		// "bidhunga@ttu.edu", "TestinG123@" });
+		// System.out.println("Records inserted successfully");
 
 		// // delete operation
 		// String deleteQuery = "delete from employee where employeeId = ?";
@@ -33,7 +34,6 @@ public class Main {
 		List<Employee> employees = (List<Employee>) jdbcTemplate.query(selectQuery,
 				new BeanPropertyRowMapper(Employee.class));
 		System.out.println(employees);
-
 	}
 
 }
